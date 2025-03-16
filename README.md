@@ -104,8 +104,18 @@ VITE_APP_NAME="${APP_NAME}"
 - Building docker container with this command
   docker-compose up --build -d
 
+- Navigate to QM_Backend
+  composer update or composer install
+
+- Navigate to docker container Quote_Manger
+  docker exec -it Quote_Manager bash
+
+- Give permission to Laravel app
+  chown -R www-data:www-data /var/www/storage
+  chmod -R 775 /var/www/storage
+
 - Go to Quote_Manager image in docker and migrate with seeding
-  php artisan migrate:fresh --seed
+    php artisan migrate:fresh --seed
 
 ## NOTE 
 - Make sure you sign in and get the token to put in QM_WEB env
